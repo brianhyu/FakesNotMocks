@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        // Unit Test for Cash class
-
-        // Test setup
-        Exchange exchange = new NYSE("someAccessKey");
+        // Use FakeExchange instead of NYSE
+        Exchange exchange = new FakeExchange();
+        
+        // Create Cash object
         Cash dollar = new Cash(exchange, 100);
         System.out.println("Dollar: " + dollar.toString());
 
-        // Test 'in' method of Cash
+        // Convert Dollar to Euro
         Cash euro = dollar.in("Euro");
         System.out.println("Dollar to Euro: " + euro.toString());
     }
